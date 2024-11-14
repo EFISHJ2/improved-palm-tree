@@ -3,17 +3,19 @@ title: "About Me"
 about:
   id: me
   template: broadside
-  image: img/profile.png
+  image: img/Colossal_squid.jpg
 ---
 
 :::{#me}
 
 ## Goals
+Elijah would like to have his own pet octopus one day. The squid displayed above is a colossal squid found around Antartica. I did not have an image of myself small enough to put on this website.
 
 ## Education
+High School Diploma 
 
 ## Experience
-
+ELijah his currently studying to be a marine biologist at the University of New Hampshire with experience in R coding, seal necropsy, living in the field with limited reosurces, and additional military experience with the NHANG. 
 :::
 
 Thanks for checking out my web site!

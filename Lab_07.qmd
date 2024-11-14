@@ -1,0 +1,51 @@
+---
+title: "Lab_07"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+
+```
+
+We will examine chick weights where chicks were fed different diets. You can use the code below and ?ChickWeight to learn about the data.
+
+Run an ANOVA and Tukey test to assess differences in the weights between diet groups on day 21 of the study. Be sure to check model assumptions.
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Load the ChickWeight dataset
+data("ChickWeight")
+
+# Check the structure of the dataset
+str(ChickWeight)
+
+# Filter the data to focus on a specific time point (e.g., day 21)
+chick_data_day21 <- ChickWeight %>% filter(Time == 21)
+
+```
+
+```{r}
+
+anova <- aov(weight ~ Diet, data = chick_data_day21)
+summary(anova)
+
+
+tukey <- TukeyHSD(anova)
+print(tukey)
+
+
+plot(anova)
+```
+
+Running the above plot on the anova gives 4 different plots.
+
+The first plot is Residual vs Fitted. This plot has a fairly flat line, so this is a good assumption and model.
+
+The second plot is a Q-Q plot. The standardized residuals fall generally on the QQ line, so this assumption is also good.
+
+The third and fourth plot I am a little confused by, but I know the line is supposed to be mostly flat. With real data like this it rarely is, so I believe both of these model assumptions are also good.
